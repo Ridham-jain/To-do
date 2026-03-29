@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fredoka+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Gravitas+One&family=Italianno&family=Lavishly+Yours&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <title>todolist</title>
+</head>
+
+<body>
+    <div class="header">
+        <div class="textcont">
+            <h1 id="name">Daily Stack</h1>
+            <p class="subtitle">Your Task Manager</p>
+            <br>
+            <br>
+            <p class="caption l">Stack Your Tasks. </p>
+            <div class="decorative-line"></div>
+            <p class="caption r">Clear Your Mind</p>
+            <br><br><br><br>
+            <p id="text">Plan your day with ease, keep track of what matters,
+                and stay productive with a simple and organized to-do list.</p>
+        </div>
+        <div class="imgsection">
+            <div class="tagso">Prepare report</div>
+            <div class="tagst">Prepare report</div>
+            <div class="tagsth">Prepare report</div>
+            <img src="headerimg.png" alt="dailystack" id="headerimg">
+            <img src="alarm.png" alt="alarm" class="alarm">
+            <img src="stack.png" alt="stack" class="stack">
+        </div>
+    </div>
+    <div class="buttons">
+        <button id="add">Add Task</button>
+        <button id="archives">Archives</button>
+    </div>
+    <div class="today">
+        <img src="calendar.svg" alt="calendar" class="section-icon">
+        <h2 class="maintitletoday">Due Today</h2>
+        <div class="list1">
+            <div class="pack1">
+                <div class="item1"><span>buy milk</span><div class="task-buttons"><button class="expand">&#9660;</button><button class="complete">✓</button><button class="delete">✕</button><button class="star">★</button></div>
+                </div>
+                <div class="dropdown"><br>helloworld</div>
+            </div>
+            <div class="pack1">
+                <div class="item1"><span>buy groceries</span><div class="task-buttons"><button class="expand">&#9660;</button><button class="complete">✓</button><button class="delete">✕</button><button class="star">★</button></div>
+                </div>
+                <div class="dropdown"><br>helloworld</div>
+            </div>
+            <div class="pack1">
+                <div class="item1"><span>submit report</span><div class="task-buttons"><button class="expand">&#9660;</button><button class="complete">✓</button><button class="delete">✕</button><button class="star">★</button></div>
+                </div>
+                <div class="dropdown"><br>helloworld</div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+    <div class="alltask">
+        <img src="list.svg" alt="list" class="section-icon">
+        <h2 id="maintitleall">All Tasks</h2>
+        <div class="list2">
+            <div class="pack2">
+                <div class="item2"><span>Complete report</span><div class="task-buttons"><button class="expand">&#9660;</button><button class="complete">✓</button><button class="delete">✕</button><button class="star">★</button></div>
+                </div>
+                <div class="dropdown"><br>helloworld</div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+    <div class="completed">
+        <img src="check.svg" alt="check" class="section-icon">
+        <h2 id="maintitlecomp">Completed Tasks</h2>
+        <div class="list3">
+            <div class="pack3">
+                <div class="item3"><span>Complete report</span><div class="task-buttons"><button class="expand">&#9660;</button><button class="delete">✕</button><button class="star" disabled>★</button></div>
+                </div>
+                <div class="dropdown"><br>helloworld</div>
+            </div>
+            <div class="pack3">
+                <div class="item3"><span>Pickup guests</span><div class="task-buttons"><button class="expand">&#9660;</button><button class="delete">✕</button><button class="star" disabled>★</button></div>
+                </div>
+                <div class="dropdown"><br>helloworld</div>
+            </div>
+        </div>
+    </div>
+    <div class="addtask">
+        <div class="modalcontent">
+            <span class="close">&times;</span>
+            <h2 id="modaltitle">Add a task</h2>
+            <label for="name">Enter the name of the task</label><input type="text" id="taskname">
+            <br><br>
+            <label for="duedate">Select the due date</label><input type="date" id="due">
+            <br><br>
+            <label for="duedate">Select the due time</label><input type="time" id="time">
+            <br><br><br>
+            <button id="addtask">Add Task</button>
+        </div>
+    </div>
+    <script src="../static/script.js"></script>
+</body>
+
+</html>
