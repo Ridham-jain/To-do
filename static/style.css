@@ -302,6 +302,10 @@ body {
 }
 
 .alltask .task-buttons .star {
+    color: #9606d9 !important;
+}
+
+.late .task-buttons .star {
     color: #db2777 !important;
 }
 
@@ -318,6 +322,7 @@ body {
 
 .today .task-buttons .star.active,
 .alltask .task-buttons .star.active,
+.late .task-buttons .star.active,
 .completed .task-buttons .star.active {
     background: #f59e0b !important;
     color: white !important;
@@ -366,6 +371,11 @@ body {
 
 .alltask .task-buttons button {
     background: rgba(255,255,255,0.8);
+    color: #9606d9;
+}
+
+.late .task-buttons button {
+    background: rgba(255,255,255,0.8);
     color: #db2777;
 }
 
@@ -374,7 +384,7 @@ body {
     color: #16a34a;
 }
 
-.today, .alltask, .completed {
+.today, .alltask, .late, .completed {
     width: 90%;
     max-width: 1000px;
     padding: 30px;
@@ -386,7 +396,7 @@ body {
     overflow: hidden;
 }
 
-.today h2, .alltask h2, .completed h2 {
+.today h2, .alltask h2, .late h2, .completed h2 {
     font-size: 1.8rem;
     font-family: 'Fredoka One', cursive;
     margin-bottom: 20px;
@@ -405,26 +415,35 @@ body {
     background: linear-gradient(135deg, #fef3c7, #fde68a);
 }
 
-.alltask {
+.late {
     background: linear-gradient(135deg, #fce7f3, #fbcfe8);
+}
+
+.alltask {
+    background: linear-gradient(135deg, #f5d9fd, #ddacfd);
+    color: #7c2d12;
 }
 
 .completed {
     background: linear-gradient(135deg, #d1fae5, #a7f3d0);
 }
 
-.list1, .list2, .list3 {
+.list1, .list2, .list3, .list4 {
     color: #2d3748;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     border-radius: 20px;
     overflow: hidden;
 }
 
+.list2 {
+    background: linear-gradient(135deg, #f6defd, #e3bbfd);
+}
+
 .list1 {
     background: linear-gradient(135deg, #fef3c7, #fde68a);
 }
 
-.list2 {
+.list4 {
     background: linear-gradient(135deg, #fce7f3, #fbcfe8);
 }
 
@@ -432,7 +451,7 @@ body {
     background: linear-gradient(135deg, #d1fae5, #a7f3d0);
 }
 
-.pack1, .pack2, .pack3 {
+.pack1, .pack2, .pack3, .pack4 {
     margin: 15px;
     padding: 20px;
     border-radius: 15px;
@@ -444,7 +463,7 @@ body {
     position: relative;
 }
 
-.pack1:hover, .pack2:hover, .pack3:hover {
+.pack1:hover, .pack2:hover, .pack3:hover, .pack4:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
@@ -454,7 +473,7 @@ body {
     color: #991b1b;
 }
 
-.pack2 {
+.pack4 {
     background: linear-gradient(135deg, #fdf2f8, #fce7f3);
     color: #be185d;
 }
@@ -464,7 +483,12 @@ body {
     color: #166534;
 }
 
-.item1, .item2, .item3 {
+.pack2 {
+    background: linear-gradient(135deg, #fbf6fb, #f8d7fb);
+    color: #652179;
+}
+
+.item1, .item2, .item3, .item4 {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -513,6 +537,29 @@ body {
 .dropdown.open {
     max-height: 200px;
     padding: 15px 20px;
+}
+
+.dropdown .drophead {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+}
+
+.today .dropdown {
+    color: #cd7676;
+}
+
+.alltask .dropdown {
+    color: #a876b7;
+
+}
+.late .dropdown {
+    color: #eb72a4;
+
+}
+.completed .dropdown {
+    color: #72b48b;
+
 }
 
 .addtask {
@@ -653,17 +700,17 @@ body {
         width: 250px;
     }
 
-    .today, .alltask, .completed {
+    .today, .alltask, .late, .completed {
         width: 95%;
         padding: 20px;
     }
 
-    .pack1, .pack2, .pack3 {
+    .pack1, .pack2, .pack3, .pack4 {
         margin: 10px;
         padding: 15px;
     }
 
-    .item1, .item2, .item3 {
+    .item1, .item2, .item3, .item4 {
         font-size: 1rem;
     }
 
