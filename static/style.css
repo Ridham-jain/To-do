@@ -524,6 +524,53 @@ body {
     background: #e2e8f0;
 }
 
+.edit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255,255,255,0.8);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.today .edit { color: #d97706; }
+.alltask .edit { color: #9606d9; }
+.late .edit { color: #db2777; }
+.completed .edit { color: #16a34a; }
+
+.edit:hover {
+    background: #3b82f6;
+    color: white;
+    transform: scale(1.1);
+}
+
+.edit:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+    background: rgba(255,255,255,0.6);
+}
+
+.edit:disabled:hover {
+    background: rgba(255,255,255,0.6);
+    color: inherit;
+    transform: none;
+}
+
+.complete, .delete, .star, .edit {
+    margin-left: 0;
+}
+
+.task-buttons {
+    display: flex;
+    gap: 8px;   
+}
+
 .dropdown {
     max-height: 0;
     overflow: hidden;
@@ -560,6 +607,89 @@ body {
 .completed .dropdown {
     color: #72b48b;
 
+}
+
+.taskdesc {
+    margin-top: 10px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.7);
+    border: 1px solid #e2e8f0;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    min-height: 40px;
+    transition: all 0.2s ease;
+}
+
+.taskdesc[contenteditable="true"] {
+    outline: none;  
+    background: white;
+}
+
+.today .taskdesc[contenteditable="true"]
+{
+    border: 2px solid #faed60;
+    box-shadow: 0 0 0 3px rgba(240, 250, 96, 0.2);
+}
+
+.alltask .taskdesc[contenteditable="true"]
+{
+    border: 2px solid #cc60fa;
+    box-shadow: 0 0 0 3px rgba(201, 96, 250, 0.2);
+}
+
+.late .taskdesc[contenteditable="true"]
+{
+    border: 2px solid #eb72a4;
+    box-shadow: 0 0 0 3px rgba(235, 114, 164, 0.2);
+}
+
+.save-btn {
+    display: none;
+    margin-top: 12px;
+    padding: 8px 14px;
+    border-radius: 10px;
+    border: none;
+    font-size: 0.9rem;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.today .save-btn {
+    background: linear-gradient(135deg, #fdef58, #fbbf24);
+    color: #b45309;
+}
+
+.alltask .save-btn {
+    background: linear-gradient(135deg, #cc60fa, #a876b7);
+    color: #ffffff;
+}
+
+.late .save-btn {
+    background: linear-gradient(135deg, #eb72a4, #ef4673);
+    color: #ffffff;
+}
+
+.save-btn.show {
+    display: inline-block;
+}
+
+.save-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 12px rgba(59,130,246,0.3);
+}
+
+.today .save-btn:hover {
+    box-shadow: 0 5px 12px rgba(249, 161, 45, 0.3);   
+}
+
+.alltask .save-btn:hover {
+    box-shadow: 0 5px 12px rgba(232, 45, 249, 0.3);   
+}
+
+.late .save-btn:hover {
+    box-shadow: 0 5px 12px rgba(239, 71, 141, 0.3);   
 }
 
 .addtask {

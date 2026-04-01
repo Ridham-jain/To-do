@@ -52,9 +52,11 @@ addbttn.addEventListener("click", () => {
                     <button class="complete">✓</button>
                     <button class="delete">✕</button>
                     <button class="star">★</button>
+                    <button class="edit">✎</button>
                 </div>
             </div>
-            <div class="dropdown"><br><div class="drophead"><div class="desc">Description</div><div class="due">Due Date : ${timed}</div></div><br>Task details here</div>
+            <div class="dropdown"><br><div class="drophead"><div class="desc">Description</div><div class="due">Due Date : ${timed}</div></div><br><div class="taskdesc">helloworld</div>
+            <button class="save-btn">Save</button></div>
         `;
 
         pack.setAttribute("data-date", dued.value);
@@ -135,6 +137,11 @@ document.addEventListener("click", function (e) {
             star.classList.remove("active");
         }
 
+        const edit = pack.querySelector(".edit");
+        if (edit) {
+            edit.disabled = true;
+        }
+        
         completedList.appendChild(pack);
     }
     if (e.target.classList.contains("delete")) {
@@ -142,6 +149,39 @@ document.addEventListener("click", function (e) {
         if (pack) {
             pack.remove();
         }
+    }
+    if (e.target.classList.contains("edit")) {
+        const pack = e.target.closest(".pack1,.pack2,.pack3,.pack4");
+
+        if (pack.classList.contains("pack3")) return;
+
+        const dropdown = pack.querySelector(".dropdown");
+        const desc = pack.querySelector(".taskdesc");
+        const savebtn = pack.querySelector(".save-btn");
+
+        if (!dropdown.classList.contains("open")) {
+            dropdown.classList.add("open");
+        }
+
+        desc.setAttribute("contenteditable", "true");
+        desc.focus();
+
+        const range = document.createRange();
+        range.selectNodeContents(desc);
+        range.collapse(false);
+        const selection = window.getSelection();
+        selection.removeAllRanges();
+        selection.addRange(range);
+
+        savebtn.style.display = "block";
+    }
+    if (e.target.classList.contains("save-btn")) {
+        const pack = e.target.closest(".pack1,.pack2,.pack3,.pack4");
+        const desc = pack.querySelector(".taskdesc");
+
+        desc.removeAttribute("contenteditable");
+
+        e.target.style.display = "none";
     }
 });
 
